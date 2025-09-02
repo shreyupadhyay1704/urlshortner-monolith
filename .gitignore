@@ -1,0 +1,47 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Target directory (Maven/Gradle build output)
+target/
+build/
+
+# Dependency directories (if accidentally copied)
+node_modules/
+
+# IDE specific files
+*.iml
+.idea/
+.vscode/
+*.classpath
+*.project
+*.settings/
+
+# Spring Boot specific
+*.jar
+*.war
+*.ear
+
+# Compiled class files
+*.class
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Environment files
+.env
+# application-*.yml
+# application-*.properties
+
+# Test reports
+test-output/
+surefire-reports/
+
+# OS trash
+ehthumbs.db
+Desktop.ini
