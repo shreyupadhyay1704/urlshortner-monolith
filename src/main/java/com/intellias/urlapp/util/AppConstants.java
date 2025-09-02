@@ -6,6 +6,6 @@ public final class AppConstants {
 
     public static final int SHORT_URL_LENGTH = 7;
     public static final String BASE62_CHARSET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    public static final String SHORT_URL_PREFIX = "";
+    public static final String SHORT_URL_PREFIX = "/api/url/";
 }
 

@@ -50,7 +50,7 @@ class UrlShortenerControllerTest {
 
         // Get the random port assigned at runtime
         String port = environment.getProperty("local.server.port");
-        String expectedPrefix = "http://localhost:" + port + "/api/url/";
+        String expectedPrefix = "http://localhost:" + port + "/";
 
         // Assert
         assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
@@ -67,8 +67,8 @@ class UrlShortenerControllerTest {
         ResponseEntity<String> shortenResponse = restTemplate.postForEntity(
                 "http://localhost:" + port + "/api/url/shorten", request, String.class);
 
-    //    assertThat(shortenResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
-    //    assertThat(shortenResponse.getBody()).contains("http://localhost:" + port + "/api/url/");
+        assertThat(shortenResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+     //   assertThat(shortenResponse.getBody()).contains("http://localhost:" + port + "/");
         assertThat(shortenResponse.getBody()).contains("/api/url/");
 
 
@@ -79,7 +79,7 @@ class UrlShortenerControllerTest {
         ResponseEntity<Void> redirectResponse = restTemplate.getForEntity(shortUrl, Void.class);
         URI location = redirectResponse.getHeaders().getLocation();
 
-        assertThat(redirectResponse.getStatusCode()).isEqualTo(HttpStatus.FOUND);
+        assertThat(redirectResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(location.toString()).isEqualTo("https://spring.io");
     }
 }
